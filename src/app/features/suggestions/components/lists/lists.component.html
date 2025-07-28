@@ -1,0 +1,33 @@
+<header>
+  <div class="container">
+    <!-- suggestion -->
+    <div class="item-count">
+      <img src="" alt="">
+  
+      <div>
+        <p>6
+          Suggestions
+        </p>
+        
+      </div>
+    </div>
+    <!-- sort -->
+    <div class="sort">
+      <span>Sort by: </span>
+      <p>Most Upvotes</p>
+    </div>
+
+  </div>
+
+  <!-- button -->
+  <button class="add-feedback">
+    + Add Feedback
+  </button>
+</header>
+
+<!-- suggestion lists -->
+<div class="suggestions">
+  @for (suggestion of suggestions(); track suggestion.id) {
+    <app-list-item [suggestion]="suggestion" />
+  }
+</div>

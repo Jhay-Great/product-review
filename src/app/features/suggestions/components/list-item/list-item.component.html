@@ -1,0 +1,18 @@
+<!-- upvote count -->
+<section class="upvotes">
+  <p>
+    {{ suggestion().upvotes }}
+  </p>
+</section>
+
+<!-- content -->
+<section class="content">
+  <h2>{{ suggestion().header }}</h2>
+  <p class="description">{{ suggestion().description }}</p>
+  <p class="tag">{{ suggestion().tag }}</p>
+</section>
+
+<!-- comment count -->
+<section class="comments">
+  <p>{{ suggestion().comments.length }}</p>
+</section>

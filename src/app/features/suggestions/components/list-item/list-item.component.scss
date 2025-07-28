@@ -1,0 +1,25 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:host {
+  @include flex(row);
+  gap: 1rem;
+  width: 100%;
+  height: fit-content;
+  background-color: $white;
+  border-radius: 8px;
+  padding: 1.5rem;
+
+}
+
+.upvotes {
+  flex-basis: 40px;
+}
+
+.content {
+  flex: 3;
+}
+
+.comments {
+  flex-basis: 40px;
+}
