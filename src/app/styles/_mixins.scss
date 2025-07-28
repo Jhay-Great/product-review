@@ -1,0 +1,87 @@
+@use 'variables' as *;
+
+@mixin flex($direction:row, $justify:flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin h1() {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+}
+@mixin h2() {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px;
+}
+@mixin h3() {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+}
+@mixin h4() {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin body1() {
+  font-size: 16px;
+  line-height: 23px;
+}
+@mixin body2() {
+  font-size: 15px;
+  line-height: 22px;
+}
+@mixin body3() {
+  font-size: 13px;
+  line-height: 19px;
+}
+
+@mixin button1 {
+  background-color: $purple;
+  color: $white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #C75AF6;
+  }
+}
+@mixin button2 {
+  background-color: $dark-blue;
+  color: $white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #7C91F9;
+  }
+}
+@mixin button3 {
+  background-color: $blue-faded-darker;
+  color: $white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #656EA3;
+  }
+}
+@mixin button4 {
+  background-color: #D73737;
+  color: $white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #E98888;
+  }
+}
