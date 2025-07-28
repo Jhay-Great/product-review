@@ -8,13 +8,13 @@
 
 <!-- content -->
 <section class="content">
-  <h2>{{ suggestion().header }}</h2>
+  <h2>{{ suggestion().title }}</h2>
   <p class="description">{{ suggestion().description }}</p>
-  <p class="tag">{{ suggestion().tag }}</p>
+  <p class="tag">{{ suggestion().category }}</p>
 </section>
 
 <!-- comment count -->
 <section class="comments">
   <i class="pi pi-comments"></i>
-  <p>{{ suggestion().comments.length }}</p>
+  <p>{{ (suggestion().comments)?.length }}</p>
 </section>
