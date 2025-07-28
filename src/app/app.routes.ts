@@ -6,7 +6,12 @@ export const routes: Routes = [
     path:'',
     component: ProductFeedbackDashboardComponent,
     title: 'Product Feedback app',
-    children: [],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('@features/suggestions').then(s => s.SUGGESTIONS_ROUTES)
+      }
+    ],
   },
   {
     path: '**',

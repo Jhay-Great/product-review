@@ -24,6 +24,7 @@
   
       // features
       "@features": ["src/app/features"],
+      "@features/suggestions": ["src/app/features/suggestions"],
   
       // shared
       "@shared/components": ["src/app/shared/components"],
