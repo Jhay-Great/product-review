@@ -13,7 +13,14 @@
 }
 
 .upvotes {
+  @include flex(column, flex-start, center);
+  gap: 0.2rem;
   flex-basis: 40px;
+  background-color: $blue-light;
+  height: fit-content;
+  padding: 0.5rem;
+  border-radius: 8px;
+  
 }
 
 .content {
@@ -21,5 +28,7 @@
 }
 
 .comments {
+  @include flex(row);
+  gap: 0.2rem;
   flex-basis: 40px;
 }
