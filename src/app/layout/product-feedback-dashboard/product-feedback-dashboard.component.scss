@@ -1,7 +1,14 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 :host {
+  @include flex(row, center);
+  padding-block: 2rem;
   width: 100%;
   height: 100%;
   background-color: $blue-lighter;
+}
+
+main {
+  width: min(1100px, 90%);
 }
