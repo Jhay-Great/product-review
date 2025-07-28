@@ -1,0 +1,28 @@
+
+<!-- logo -->
+
+<!-- tags -->
+<section>
+  @for (tag of tags(); track tag.id) {
+    <span>
+      {{ tag.name }}
+    </span>
+  }
+
+</section>
+
+<!-- roadmaps -->
+<section>
+  <header>
+    <h3>Roadmap</h3>
+    <a>View</a>
+  </header>
+  <ul>
+    @for (roadmap of roadmaps(); track roadmap.id) {
+      <li>
+        <span>{{ roadmap.name }}</span>
+        <span> {{ roadmap.count }} </span>
+      </li>
+    }
+  </ul>
+</section>

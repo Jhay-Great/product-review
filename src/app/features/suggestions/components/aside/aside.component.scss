@@ -1,0 +1,19 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  @include flex(column);
+  gap: 1.5rem;
+}
+
+section {
+  background-color: $white;
+  width: 100%;
+  height: fit-content;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+h3 {
+  @include h3();
+}
