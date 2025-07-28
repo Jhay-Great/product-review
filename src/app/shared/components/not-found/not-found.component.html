@@ -1,0 +1,17 @@
+<img src="not-found.svg" alt="content not found svg image">
+
+@if (title()) {
+  <h1> {{ title() }} </h1>
+}
+
+@if (description()) {
+  <p class="description">
+    {{ description() }}
+  </p>
+}
+
+@if (buttonLabel()) {
+  <button>
+    {{ buttonLabel() }}
+  </button>
+}

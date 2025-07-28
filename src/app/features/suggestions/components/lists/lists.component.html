@@ -26,8 +26,22 @@
 </header>
 
 <!-- suggestion lists -->
-<div class="suggestions">
-  @for (suggestion of suggestions(); track suggestion.id) {
-    <app-list-item [suggestion]="suggestion" />
-  }
-</div>
+@defer (when suggestions().length > 0) {
+  <div class="suggestions">
+    @for (suggestion of suggestions(); track suggestion.id) {
+      <app-list-item [suggestion]="suggestion" />
+    }
+    @empty() {
+      <app-not-found />
+    
+    }
+  </div>
+}
+@placeholder {
+  <app-not-found />
+}
+@loading {
+  <p>
+    Content is loading...
+  </p>
+}
