@@ -1,7 +1,7 @@
 <header>
     <a class="go-back" routerLink="''">
         <i class="pi pi-angle-left"></i>
-        <span>back</span>
+        <span>Go back</span>
     </a>
     <button class="edit-feedback">Edit feedback</button>
 </header>
@@ -11,5 +11,17 @@
 </section>
 
 <section class="feedback-comments">
+    <h2>
+        {{ feedback()?.comments?.length || 0 }} {{ feedback()?.comments?.length! > 1 ? 'Comments' : 'Comment' }}
+    </h2>
 
+    <div class="feedback-comments__container">
+        @for (comment of feedback()?.comments; track feedback()?.id) {
+            <app-comment [comment]="comment" />
+        } @empty {
+            <app-not-found title="No comments found" description="No comments available. Add a comment based on the review" />
+        }
+    </div>
 </section>
+
+<!-- add comments -->

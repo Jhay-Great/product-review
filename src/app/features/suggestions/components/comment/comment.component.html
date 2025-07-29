@@ -1,0 +1,25 @@
+<!-- profile picture -->
+<div class="profile-picture">
+    <img [src]="comment()?.user?.image" [alt]="'image of ' + comment()?.user?.name">
+</div>
+
+<!-- content -->
+<section class="content">
+    <!-- user -->
+    <div class="user">
+        <!-- display name -->
+        <p class="name"> {{ comment()?.user?.name }} </p>
+        <!-- username -->
+        <p class="username"> {{ comment()?.user?.username }} </p>
+
+    </div>
+
+    <!-- content -->
+    <p class="comment"> {{ comment()?.content }} </p>
+</section>
+
+<!-- reply button -->
+<div class="reply">
+    <button>reply</button>
+
+</div>

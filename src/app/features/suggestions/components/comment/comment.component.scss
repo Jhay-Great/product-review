@@ -1,0 +1,50 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:host {
+  @include flex(row);
+  gap: 1rem;
+  width: 100%;
+  height: fit-content;
+  background-color: $white;
+  padding-bottom: 1rem;
+  
+  &:not(:last-child) {
+      border-bottom: 1px solid #8C92B3;
+
+  }
+}
+
+.profile-picture, .reply {
+    flex-basis: 40px;
+}
+
+section {
+    flex: 1;
+    color: $blue-faded-darker;
+
+    &.content {
+        @include flex(column);
+        gap: 1rem;
+    }
+
+    .name {
+        @include h4();
+    }
+    .username {
+        @include body3();
+    }
+    .content {
+        @include body2();
+    }
+}
+
+button {
+    background-color: transparent;
+    color: $blue;
+    font-weight: bold;
+    text-transform: capitalize;
+    &:hover {
+        border-bottom: 1px solid $blue;
+    }
+}

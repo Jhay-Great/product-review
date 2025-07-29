@@ -10,10 +10,12 @@ import { Store } from '@ngrx/store';
 import { ListItemComponent } from "../../components/list-item/list-item.component";
 import { SuggestionActions } from '../../store/actions';
 import { selectSelectedSuggestion } from '../../store/feature';
+import { CommentComponent } from "../../components/comment/comment.component";
+import { NotFoundComponent } from 'src/app/shared/components/not-found/not-found.component';
 
 @Component({
   selector: 'app-feedback-details',
-  imports: [RouterLink, ListItemComponent],
+  imports: [RouterLink, ListItemComponent, CommentComponent, NotFoundComponent],
   templateUrl: './feedback-details.component.html',
   styleUrl: './feedback-details.component.scss'
 })
