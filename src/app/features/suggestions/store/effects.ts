@@ -14,7 +14,6 @@ export class SuggestionEffect {
       ofType(SuggestionActions.loadSuggestions),
       switchMap(() => {
         return this.suggestionService.getProductRequests().pipe(
-          tap(() => console.log('called...')),
           map(suggestions => SuggestionActions.loadSuggestionsSuccess({suggestions: suggestions})),
           catchError(() => of(SuggestionActions.loadSuggestionsFailed({ error: 'An error occurred...'})))
         )

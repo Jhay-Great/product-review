@@ -26,19 +26,25 @@
 </header>
 
 <!-- suggestion lists -->
-@defer (when suggestions().length > 0) {
+@defer (when !loading()) {
   <div class="suggestions">
     @for (suggestion of suggestions(); track suggestion.id) {
       <app-list-item [suggestion]="suggestion" />
     }
     @empty() {
-      <app-not-found />
+      <app-not-found 
+        title="There is no feedback yet." 
+        description="Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app." 
+        buttonLabel="+ Add feedback"
+      />
     
     }
   </div>
 }
 @placeholder {
-  <app-not-found />
+  <app-not-found 
+    title="No feedback available yet."
+  />
 }
 @loading {
   <p>

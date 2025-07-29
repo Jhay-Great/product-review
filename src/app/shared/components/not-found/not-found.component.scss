@@ -1,0 +1,30 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:host {
+    @include flex(column, flex-start, center);
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    padding: 5rem 2rem;
+}
+
+.content {
+    width: min(500px, 90%);
+    @include flex(column, flex-start, center);
+    gap: 0.5rem;
+}
+
+h1 {
+    @include h1();
+}
+
+p {
+    text-align: center;
+    color: $blue-faded;
+}
+
+button {
+    @include button1();
+}
