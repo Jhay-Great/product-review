@@ -1,3 +1,4 @@
+@use 'theme' as *;
 @use 'mixins' as *;
 
 * {
@@ -8,6 +9,7 @@
 
 body {
   @include flex(row);
+  font-family: "Jost", sans-serif;
   width: 100%;
   height: 100dvh;
 }
