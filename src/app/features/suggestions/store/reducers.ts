@@ -21,4 +21,8 @@ export const suggestionReducer = createReducer(
   on(SuggestionActions.loadSuggestions, (state) => ({...state, loading: true })),
   on(SuggestionActions.loadSuggestionsSuccess, (state, { suggestions }) => ({...state, suggestions, loading: false })),
   on(SuggestionActions.loadSuggestionsFailed, (state, { error }) => ({...state, error, loading: false })),
+  on(SuggestionActions.loadSelectedFeedback, (state, { id }) => {
+    const feedback = state.suggestions.find(suggestion => suggestion.id === +id);
+    return feedback ? {...state, selectedSuggestion: feedback, loading: false} : {...state, selectedSuggestion: null, loading:false};
+  })
 );

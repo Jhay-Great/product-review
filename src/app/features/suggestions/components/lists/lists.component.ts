@@ -1,4 +1,5 @@
 import { Component, effect, inject, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { ListItemComponent } from '../list-item/list-item.component';
 import { SuggestionService } from '../../services/suggestion.service';
@@ -9,7 +10,7 @@ import { NotFoundComponent } from 'src/app/shared/components/not-found/not-found
 
 @Component({
   selector: 'app-lists',
-  imports: [ListItemComponent, NotFoundComponent],
+  imports: [RouterLink, ListItemComponent, NotFoundComponent],
   templateUrl: './lists.component.html',
   styleUrl: './lists.component.scss'
 })

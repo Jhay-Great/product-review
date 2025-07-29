@@ -8,10 +8,21 @@ import { SuggestionEffect } from "./store/effects";
 export const SUGGESTIONS_ROUTES: Routes = [
   {
     path: '',
-    component: SuggestionsComponent,
     providers: [
       provideState('suggestion', suggestionReducer),
       provideEffects(SuggestionEffect),
-    ]
+    ],
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/suggestions/suggestions.component').then(s => s.SuggestionsComponent),
+        title: 'Feedback reviews',
+      },
+      {
+        path: ':id',
+        loadComponent: () => import('./pages/feedback-details/feedback-details.component').then(f => f.FeedbackDetailsComponent),
+        title: 'Feedback detail',
+      }
+    ],
   }
 ]

@@ -7,5 +7,8 @@ export const SuggestionActions = createActionGroup({
     'Load Suggestions': emptyProps,
     'Load Suggestions Success': props<{suggestions: Suggestion[]}>(),
     'Load Suggestions Failed': props<{error: string}>(),
+
+    // dispatch an item
+    'Load Selected Feedback': props<{id: string}>(),
   }
 })

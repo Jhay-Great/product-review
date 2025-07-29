@@ -29,7 +29,10 @@
 @defer (when !loading()) {
   <div class="suggestions">
     @for (suggestion of suggestions(); track suggestion.id) {
-      <app-list-item [suggestion]="suggestion" />
+      <app-list-item 
+        [routerLink]="suggestion.id.toString()"
+        [suggestion]="suggestion" 
+      />
     }
     @empty() {
       <app-not-found 
