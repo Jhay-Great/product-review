@@ -7,6 +7,14 @@
   align-items: $align;
 }
 
+@mixin container($radius: 8px) {
+  width: 100%;
+  height: fit-content;
+  background-color: $white;
+  border-radius: $radius;
+  padding: 1.5rem;
+}
+
 @mixin h1() {
   font-weight: bold;
   font-size: 24px;

@@ -16,7 +16,7 @@
     </h2>
 
     <div class="feedback-comments__container">
-        @for (comment of feedback()?.comments; track feedback()?.id) {
+        @for (comment of feedback()?.comments; track $index) {
             <app-comment [comment]="comment" />
         } @empty {
             <app-not-found title="No comments found" description="No comments available. Add a comment based on the review" />
@@ -25,3 +25,4 @@
 </section>
 
 <!-- add comments -->
+<app-add-comment />

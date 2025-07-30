@@ -1,0 +1,23 @@
+<div>
+    <h3>Add Comment</h3>
+</div>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <textarea 
+        name="comment" 
+        id="comment"
+        maxlength="250"
+        ngModel
+        #comment="ngModel"
+        required 
+        placeholder="Type your comment here"
+        [(ngModel)]="value"
+        [disabled]="value.length === 250 ? true : false"
+    >
+    </textarea>
+
+    <div>
+        <p>{{ 250 - value.length || (value ? 0 : 250) }} Characters left</p>
+        <button>Post Comment</button>
+    </div>
+</form>
