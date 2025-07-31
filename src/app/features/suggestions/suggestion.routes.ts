@@ -19,10 +19,20 @@ export const SUGGESTIONS_ROUTES: Routes = [
         title: 'Feedback reviews',
       },
       {
+        path: 'add-feedback',
+        loadComponent: () => import('./pages/create-feedback/create-feedback.component').then(a => a.CreateFeedbackComponent),
+        title: 'Add feedback',
+      },
+      {
+        path: 'edit-feedback',
+        loadComponent: () => import('./pages/create-feedback/create-feedback.component').then(a => a.CreateFeedbackComponent),
+        title: 'Edit feedback',
+      },
+      {
         path: ':id',
         loadComponent: () => import('./pages/feedback-details/feedback-details.component').then(f => f.FeedbackDetailsComponent),
         title: 'Feedback detail',
-      }
+      },
     ],
   }
 ]

@@ -1,0 +1,24 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:host {
+    width: min(200px, 90%);
+    // @include flex(column);
+    // gap: 2rem;
+}
+
+form {
+    @include flex(column);
+    gap: 1.5rem;
+}
+
+.buttons {
+    @include flex(row, space-between, center);
+}
+.cancel {
+    @include button3();
+}
+
+.add-feedback {
+    @include button1();
+}

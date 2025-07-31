@@ -1,5 +1,6 @@
 @use 'theme' as *;
 @use 'mixins' as *;
+@use 'variables' as *;
 
 * {
   margin: 0;
@@ -21,4 +22,17 @@ button {
 
 li {
   list-style: none;
+}
+
+input, textarea {
+  border-color: transparent;
+  transition: all ease-out 300ms;
+
+  &.error {
+    border-color: red;
+  }
+
+  &:focus, &:active {
+    border-color: $blue;
+  }
 }

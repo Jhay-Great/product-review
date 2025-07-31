@@ -1,0 +1,17 @@
+<!-- back -->
+
+<header>
+    <a class="go-back" [routerLink]="routeTo()">
+        <i class="pi pi-angle-left"></i>
+        <span>Go back</span>
+    </a>
+
+</header>
+
+<div class="form-container">
+    <div class="logo">
+        <img [src]="svgIcon()" alt="form svg icon">
+    </div>
+    <h1> {{ header() }} </h1>
+    <ng-content select="form" />
+</div>

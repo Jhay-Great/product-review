@@ -1,0 +1,24 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+:host {
+    @include flex(column);
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-color: transparent;
+    border-radius: 6px;
+    background-color: $blue-lighter;
+    outline: none;
+
+    &:active, &:focus, &:focus-visible {
+        border-color: $blue;
+    }
+}

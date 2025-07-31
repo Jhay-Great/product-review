@@ -1,0 +1,17 @@
+<div class="texts">
+    @if (label()) {
+        <label [for]="id()"> {{ label() }} </label>
+    
+    }
+    @if (description()) {
+        <p class="description"> {{ description() }} </p>
+    }
+</div>
+
+<input 
+    #input
+    [id]="id()"
+    type="text"
+    [name]="id()"
+    (input)="onInput($event)"
+>
