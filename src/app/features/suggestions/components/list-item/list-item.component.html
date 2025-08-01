@@ -2,7 +2,7 @@
 <section class="upvotes">
   <i class="pi pi-angle-up"></i>
   <p>
-    {{ suggestion().upvotes }}
+    {{ suggestion()?.upvotes || 0 }}
   </p>
 </section>
 
@@ -16,5 +16,5 @@
 <!-- comment count -->
 <section class="comments">
   <i class="pi pi-comments"></i>
-  <p>{{ (suggestion().comments)?.length }}</p>
+  <p>{{ (suggestion().comments)?.length || 0 }}</p>
 </section>

@@ -3,8 +3,10 @@ export interface ProductFeedback {
   productRequests: Suggestion[],
 }
 
+// export interface 
+
 export interface Suggestion {
-  id: number;
+  id: number | string;
   title: string;
   category: string;
   upvotes: number;
@@ -23,4 +25,8 @@ export interface User {
   image: string;
   name: string;
   username: string;
+}
+
+export interface ServerFeedback extends Omit<Suggestion, 'id'> {
+  _id: string;
 }

@@ -22,7 +22,7 @@ export const suggestionReducer = createReducer(
   on(SuggestionActions.loadSuggestionsSuccess, (state, { suggestions }) => ({...state, suggestions, loading: false })),
   on(SuggestionActions.loadSuggestionsFailed, (state, { error }) => ({...state, error, loading: false })),
   on(SuggestionActions.loadSelectedFeedback, (state, { id }) => {
-    const feedback = state.suggestions.find(suggestion => suggestion.id === +id);
+    const feedback = state.suggestions.find(suggestion => suggestion.id.toString() === id);
     return feedback ? {...state, selectedSuggestion: feedback, loading: false} : {...state, selectedSuggestion: null, loading:false};
   })
 );
