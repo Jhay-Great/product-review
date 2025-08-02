@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,16 @@ export class HttpService {
   };
 
   post<T, R>(url:string, body:T):Observable<R> {
-    return this.post<T, R>(url, body);
+    // console.log(url, body);
+    return this.http.post<R>(url, body);
+  }
+
+  put<T, R>(url:string, body:T):Observable<R> {
+    return this.http.put<R>(url, body);
+  }
+
+  delete<T>(url:string):Observable<T> {
+    return this.http.delete<T>(url);
   }
 
 }

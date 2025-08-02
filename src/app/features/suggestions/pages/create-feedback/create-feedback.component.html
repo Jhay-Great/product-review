@@ -1,27 +1,31 @@
 
 <app-form header="Create New Feedback" svgIcon="add-feedback.svg">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-control">
             <app-input-text 
             label="Feedback title"
             description="Add a short, descriptive headline"
+            formControlName="title"
         />
 
         </div>
         <div class="form-control">
-            <app-input-text />
+            <app-input-text 
+                formControlName="category"
+            />
 
         </div>
         <div class="form-control">
             <app-input-text 
                 label="Feedback Detail"
                 description="Include any specific comments on what should be improved, added, etc."
+                formControlName="description"
             />
 
         </div>
         <div class="buttons">
             <button class="cancel">Cancel</button>
-            <button class="add-feedback">Add feedback</button>
+            <button type="submit" class="add-feedback">Add feedback</button>
         </div>
     </form>
 </app-form>

@@ -19,5 +19,17 @@ export class SuggestionEffect {
         )
       })
     )
+  });
+
+  createSuggestion$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(SuggestionActions.createFeedback),
+      switchMap(({feedback}) => {
+        return this.suggestionService.createFeedback(feedback).pipe(
+          map(suggestions => SuggestionActions.loadSuggestionsSuccess({suggestions: suggestions})),
+          catchError(() => of(SuggestionActions.loadSuggestionsFailed({ error: 'An error occurred...'})))
+        )
+      })
+    )
   })
 }

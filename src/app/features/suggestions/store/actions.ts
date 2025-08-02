@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from "@ngrx/store";
-import { Suggestion } from "../model/suggestion.model";
+import { NewFeedback, Suggestion } from "../model/suggestion.model";
 
 export const SuggestionActions = createActionGroup({
   source: 'Suggestions',
@@ -10,5 +10,8 @@ export const SuggestionActions = createActionGroup({
 
     // dispatch an item
     'Load Selected Feedback': props<{id: string}>(),
+
+    // create feedback
+    'Create Feedback': props<{feedback: NewFeedback}>(),
   }
 })

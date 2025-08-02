@@ -30,3 +30,5 @@ export interface User {
 export interface ServerFeedback extends Omit<Suggestion, 'id'> {
   _id: string;
 }
+
+export type NewFeedback = Pick<Suggestion, 'title' | 'category' | 'description'>;
