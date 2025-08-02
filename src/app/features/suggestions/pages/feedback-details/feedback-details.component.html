@@ -3,7 +3,10 @@
         <i class="pi pi-angle-left"></i>
         <span>Go back</span>
     </a>
-    <button class="edit-feedback">Edit feedback</button>
+    <button 
+        class="edit-feedback" 
+        [routerLink]="['/edit-feedback', feedbackId]"
+    >Edit feedback</button>
 </header>
 
 <section class="feedback-review">

@@ -24,8 +24,8 @@ export const SUGGESTIONS_ROUTES: Routes = [
         title: 'Add feedback',
       },
       {
-        path: 'edit-feedback',
-        loadComponent: () => import('./pages/create-feedback/create-feedback.component').then(a => a.CreateFeedbackComponent),
+        path: 'edit-feedback/:id',
+        loadComponent: () => import('./pages/edit-feedback/edit-feedback.component').then(e => e.EditFeedbackComponent),
         title: 'Edit feedback',
       },
       {

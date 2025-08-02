@@ -25,6 +25,7 @@ export class FeedbackDetailsComponent {
   private readonly destroyRef$ = inject(DestroyRef);
   private readonly store = inject(Store);
   feedback = this.store.selectSignal(selectSelectedSuggestion);
+  feedbackId:string | null = null;
 
   constructor() {
     this.activatedRoute.paramMap.pipe(
@@ -32,6 +33,7 @@ export class FeedbackDetailsComponent {
     ).subscribe(param => {
       const id = param.get('id');
       if (id) {
+        this.feedbackId = id;
         this.store.dispatch(SuggestionActions.loadSelectedFeedback({id}))
       }
     })

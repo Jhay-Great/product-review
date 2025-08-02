@@ -1,0 +1,45 @@
+
+<app-form header="Eit Feedback" svgIcon="edit-feedback.svg">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-control">
+            <app-input-text 
+            label="Feedback title"
+            description="Add a short, descriptive headline"
+            formControlName="title"
+        />
+
+        </div>
+        <div class="form-control">
+            <app-input-text 
+                label="Category" 
+                description="Choose a category for your feedback"
+                formControlName="category"
+            />
+
+        </div>
+        <div class="form-control">
+            <app-input-text 
+                label="Update status"
+                description="Change feedback state"
+                formControlName="status"
+            />
+
+        </div>
+        <div class="form-control">
+            <app-input-text 
+                label="Feedback Detail"
+                description="Include any specific comments on what should be improved, added, etc."
+                formControlName="description"
+            />
+
+        </div>
+        <div class="buttons">
+            <button class="delete" (click)="delete()">Delete</button>
+
+            <div class="inner-btns">
+                <button class="cancel">Cancel</button>
+                <button type="submit" class="add-feedback">Add feedback</button>
+            </div>
+        </div>
+    </form>
+</app-form>

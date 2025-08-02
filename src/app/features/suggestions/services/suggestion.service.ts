@@ -70,6 +70,7 @@ export class SuggestionService {
   }
 
   deleteFeedback(id:string):Observable<Suggestion[]> {
+    console.log('id: ', id);
     const url = `${this.api}/${id}`;
     return this.http.delete<RequestType>(url).pipe(
       this.transform<Suggestion[]>()
