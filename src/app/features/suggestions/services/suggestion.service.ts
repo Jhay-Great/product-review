@@ -62,15 +62,14 @@ export class SuggestionService {
     )
   };
 
-  editFeedback(id: string, data:NewFeedback):Observable<Suggestion[]> {
+  editFeedback(id: string, data:Partial<NewFeedback>):Observable<Suggestion[]> {
     const url = `${this.api}/${id}`;
-    return this.http.put<NewFeedback, RequestType>(url, data).pipe(
+    return this.http.put<Partial<NewFeedback>, RequestType>(url, data).pipe(
       this.transform<Suggestion[]>()
     )
   }
 
   deleteFeedback(id:string):Observable<Suggestion[]> {
-    console.log('id: ', id);
     const url = `${this.api}/${id}`;
     return this.http.delete<RequestType>(url).pipe(
       this.transform<Suggestion[]>()

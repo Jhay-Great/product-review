@@ -29,7 +29,7 @@ export class EditFeedbackComponent {
     status: ['', [Validators.required]],
     description: ['', [Validators.required]],
   });
-  feedback = signal<any>({});
+  feedback = signal<Suggestion>({} as Suggestion);
   feedbackId = signal<string>('');
 
   constructor() {
@@ -39,9 +39,16 @@ export class EditFeedbackComponent {
       const id = param.get('id');
       if (id) {
         const data = this.store.selectSignal(selectSelectedSuggestion);
-        this.feedback.set(data());
-        this.feedbackId.set(id);
-        this.patchForm(data()!);
+
+        const feedback = data();
+
+        if (feedback) {
+          this.feedback.set(feedback);
+          this.feedbackId.set(id);
+          this.patchForm(feedback);
+
+        }
+        
       }
     })
   }
@@ -58,6 +65,12 @@ export class EditFeedbackComponent {
     };
 
     const { value } = form;
+    this.store.dispatch(
+      SuggestionActions.editFeedback({
+        id: this.feedbackId(),
+        feedback: value
+      })
+    );
 
   }
 

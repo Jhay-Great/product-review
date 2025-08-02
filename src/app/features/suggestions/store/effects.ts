@@ -29,13 +29,26 @@ export class SuggestionEffect {
       switchMap(({feedback}) => {
         return this.suggestionService.createFeedback(feedback).pipe(
           map(suggestions => SuggestionActions.loadSuggestionsSuccess({suggestions: suggestions})),
+          tap(() => this.router.navigate([''])),
           catchError(() => of(SuggestionActions.loadSuggestionsFailed({ error: 'An error occurred...'})))
         )
       })
     )
   });
 
-  deleteSuggestioin$ = createEffect(() => {
+  editFeedback$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(SuggestionActions.editFeedback),
+      mergeMap(({id, feedback}) => {
+        return this.suggestionService.editFeedback(id, feedback).pipe(
+          map(suggestion => SuggestionActions.loadSuggestionsSuccess({suggestions: suggestion})),
+          catchError(() => of(SuggestionActions.loadSuggestionsFailed({ error: 'An error occurred...'})))
+        )
+      })
+    )
+  })
+
+  deleteSuggestion$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(SuggestionActions.deleteFeedback),
       mergeMap(({feedbackId}) => {

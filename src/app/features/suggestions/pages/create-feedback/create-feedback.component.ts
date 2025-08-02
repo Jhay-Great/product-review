@@ -26,7 +26,6 @@ export class CreateFeedbackComponent {
 
   onSubmit() {
     const form = this.form;
-    console.log('created: ', this.suggestionService.created());
     if (form.invalid) {
       form.markAllAsTouched();
       return;
