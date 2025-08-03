@@ -25,4 +25,8 @@ export class ListsComponent implements OnInit {
   ngOnInit():void {
     this.store.dispatch(SuggestionActions.loadSuggestions());
   }
+
+  onUpvote() {
+    this.store.dispatch(SuggestionActions.upvoteFeedback());
+  }
 }

@@ -33,6 +33,7 @@
       <app-list-item 
         [routerLink]="suggestion.id.toString()"
         [suggestion]="suggestion" 
+        (upvote)="onUpvote()"
       />
     }
     @empty() {

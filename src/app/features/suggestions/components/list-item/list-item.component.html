@@ -1,8 +1,8 @@
 <!-- upvote count -->
-<section class="upvotes">
+<section class="upvotes" (click)="onUpvote(suggestion().id)">
   <i class="pi pi-angle-up"></i>
   <p>
-    {{ suggestion()?.upvotes || 0 }}
+    {{ suggestion().upvotes || 0 }}
   </p>
 </section>
 

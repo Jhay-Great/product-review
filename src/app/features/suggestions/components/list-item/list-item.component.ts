@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { Suggestion } from '../../model/suggestion.model';
 
 @Component({
   selector: 'app-list-item',
@@ -8,5 +9,10 @@ import { Component, input } from '@angular/core';
 })
 export class ListItemComponent {
   suggestion = input<any>();
+  upvote = output<string | number>();
+
+  onUpvote(id: string | number) {
+    this.upvote.emit(id);
+  }
 
 }

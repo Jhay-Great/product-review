@@ -17,6 +17,9 @@ export const SuggestionActions = createActionGroup({
     // edit feedback
     'Edit Feedback': props<{id: string, feedback: Partial<NewFeedback>}>(),
 
+    // upvoting feedback
+    'Upvote Feedback': emptyProps,
+    
     // delete feedback
     'Delete Feedback': props<{feedbackId: string}>(),
   }

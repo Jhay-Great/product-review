@@ -69,6 +69,11 @@ export class SuggestionService {
     )
   }
 
+  upVoteFeedback(id:string) {
+    const url = `${this.api}/upvote/${id}`;
+    return this.http.post(url, null);
+  }
+
   deleteFeedback(id:string):Observable<Suggestion[]> {
     const url = `${this.api}/${id}`;
     return this.http.delete<RequestType>(url).pipe(
