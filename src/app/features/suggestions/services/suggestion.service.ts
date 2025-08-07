@@ -5,7 +5,7 @@ import { NewFeedback, ProductFeedback, ServerFeedback, Suggestion } from '../mod
 import { environment } from 'src/environments/environment';
 import { HttpService } from 'src/app/core/services/htt/http.service';
 import { HttpResponseInterface } from 'src/app/core/models/http.model';
-import { adaptFeedbackFromServer, adaptFeedbackToServer } from '../feedback.adapter';
+// import { adaptFeedbackFromServer, adaptFeedbackToServer } from '../feedback.adapter';
 
 type RequestType = HttpResponseInterface<Suggestion[]>;
 
